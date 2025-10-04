@@ -130,9 +130,6 @@
         </div>
       </section>
 
-      <!-- Team Section -->
-      <Team :team="websiteData.team" />
-
       <!-- Air Quality Section -->
       <AirQuality :airQuality="websiteData.airQuality" />
 
@@ -165,6 +162,9 @@
         </div>
       </section>
 
+      <!-- Team Section -->
+      <Team :team="websiteData.team" />
+
       <!-- Footer -->
       <footer class="footer">
         <div class="footer-container">
@@ -179,7 +179,9 @@
               <div class="contact-info">
                 <div class="contact-item">
                   <span class="contact-label">Email</span>
-                  <a href="mailto:contact@AtmosCOVID.agency" class="contact-value"
+                  <a
+                    href="mailto:contact@AtmosCOVID.agency"
+                    class="contact-value"
                     >contact@AtmosCOVID.com</a
                   >
                 </div>
@@ -191,9 +193,7 @@
                 </div>
                 <div class="contact-item">
                   <span class="contact-label">Address</span>
-                  <span class="contact-value"
-                    >123 Virtual Street, Metaverse City, MV 12345</span
-                  >
+                  <span class="contact-value">Iraq,Sulaimaniyah</span>
                 </div>
               </div>
             </div>

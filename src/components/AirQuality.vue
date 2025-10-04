@@ -6,33 +6,40 @@
         <p class="air-quality-subtitle">{{ airQuality.subtitle }}</p>
       </div>
 
-      <div class="countries-grid">
-        <div
-          v-for="country in airQuality.countries"
-          :key="country.id"
-          class="country-card"
-          @mouseenter="handleCardHover"
-          @mouseleave="handleCardLeave"
-        >
-          <div class="country-header">
-            <div class="country-flag">{{ country.flag }}</div>
-            <h3 class="country-name">{{ country.name }}</h3>
-          </div>
+      <div class="timeline-container">
+        <div class="timeline-header">
+          <h3 class="timeline-title">COVID-19 Impact Timeline</h3>
+          <p class="timeline-subtitle">
+            Air quality changes across three key periods
+          </p>
+        </div>
 
-          <div class="periods-list">
-            <div
-              v-for="(period, index) in country.periods"
-              :key="index"
-              class="period-item"
-            >
-              <div class="period-header">
+        <div class="timeline">
+          <div
+            class="timeline-period"
+            v-for="(period, periodIndex) in timelinePeriods"
+            :key="periodIndex"
+          >
+            <div class="period-marker" :class="getPeriodClass(periodIndex)">
+              <div class="marker-icon">{{ getPeriodIcon(periodIndex) }}</div>
+            </div>
+            <div class="period-content">
+              <h4 class="period-title">{{ period.name }}</h4>
+              <div class="countries-impact">
                 <div
-                  class="period-indicator"
-                  :class="getPeriodClass(index)"
-                ></div>
-                <h4 class="period-title">{{ period.period }}</h4>
+                  v-for="country in airQuality.countries"
+                  :key="country.id"
+                  class="country-impact"
+                >
+                  <div class="country-info">
+                    <span class="country-flag">{{ country.flag }}</span>
+                    <span class="country-name">{{ country.name }}</span>
+                  </div>
+                  <p class="impact-description">
+                    {{ country.periods[periodIndex].description }}
+                  </p>
+                </div>
               </div>
-              <p class="period-description">{{ period.description }}</p>
             </div>
           </div>
         </div>
@@ -42,25 +49,25 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from "vue";
 import type { AirQualityProps } from "../types";
 
 defineProps<AirQualityProps>();
+
+const timelinePeriods = computed(() => [
+  { name: "Before COVID (2019)", icon: "📊" },
+  { name: "During COVID (2020)", icon: "🔒" },
+  { name: "After COVID (2021-2022)", icon: "📈" },
+]);
 
 const getPeriodClass = (index: number): string => {
   const classes = ["before", "during", "after"];
   return classes[index] || "before";
 };
 
-const handleCardHover = (event: Event) => {
-  const card = event.currentTarget as HTMLElement;
-  card.style.transform = "translateY(-8px)";
-  card.style.boxShadow = "0 20px 40px rgba(0, 255, 136, 0.2)";
-};
-
-const handleCardLeave = (event: Event) => {
-  const card = event.currentTarget as HTMLElement;
-  card.style.transform = "translateY(0)";
-  card.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.1)";
+const getPeriodIcon = (index: number): string => {
+  const icons = ["📊", "🔒", "📈"];
+  return icons[index] || "📊";
 };
 </script>
 
@@ -100,123 +107,171 @@ const handleCardLeave = (event: Event) => {
   line-height: 1.6;
 }
 
-.countries-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: var(--spacing-2xl);
-}
-
-.country-card {
+/* Timeline Styles */
+.timeline-container {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-xl);
   padding: var(--spacing-2xl);
-  transition: all 0.4s ease;
   position: relative;
-  overflow: hidden;
 }
 
-.country-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(
-    90deg,
-    var(--accent-green),
-    var(--accent-green-dark)
-  );
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-
-.country-card:hover::before {
-  transform: scaleX(1);
-}
-
-.country-header {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-md);
-  margin-bottom: var(--spacing-xl);
-  padding-bottom: var(--spacing-md);
+.timeline-header {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+  padding-bottom: var(--spacing-lg);
   border-bottom: 1px solid var(--border-color);
 }
 
-.country-flag {
-  font-size: 2rem;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--accent-green-glow);
-  border-radius: var(--radius-full);
-  border: 2px solid var(--accent-green);
-}
-
-.country-name {
+.timeline-title {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.timeline-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
   margin: 0;
 }
 
-.periods-list {
+.timeline {
+  position: relative;
+  padding-left: var(--spacing-2xl);
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    #ff6b6b 0%,
+    var(--accent-green) 50%,
+    #4ecdc4 100%
+  );
+}
+
+.timeline-period {
+  position: relative;
+  margin-bottom: var(--spacing-3xl);
+}
+
+.timeline-period:last-child {
+  margin-bottom: 0;
+}
+
+.period-marker {
+  position: absolute;
+  left: -32px;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--card-bg);
+  z-index: 2;
+}
+
+.period-marker.before {
+  background: #ff6b6b;
+  box-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
+}
+
+.period-marker.during {
+  background: var(--accent-green);
+  box-shadow: 0 0 20px var(--accent-green-glow);
+}
+
+.period-marker.after {
+  background: #4ecdc4;
+  box-shadow: 0 0 20px rgba(78, 205, 196, 0.3);
+}
+
+.marker-icon {
+  font-size: 1rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.period-content {
+  background: var(--primary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  transition: all 0.3s ease;
+}
+
+.period-content:hover {
+  border-color: var(--accent-green);
+  box-shadow: 0 0 20px var(--accent-green-glow);
+}
+
+.period-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-lg) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.countries-impact {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-lg);
 }
 
-.period-item {
-  padding: var(--spacing-lg);
-  background: var(--primary-bg);
+.country-impact {
+  padding: var(--spacing-md);
+  background: var(--card-bg);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   transition: all 0.3s ease;
 }
 
-.period-item:hover {
+.country-impact:hover {
   border-color: var(--accent-green);
-  box-shadow: 0 0 20px var(--accent-green-glow);
+  transform: translateX(4px);
 }
 
-.period-header {
+.country-info {
   display: flex;
   align-items: center;
-  gap: var(--spacing-md);
+  gap: var(--spacing-sm);
   margin-bottom: var(--spacing-sm);
 }
 
-.period-indicator {
-  width: 12px;
-  height: 12px;
+.country-flag {
+  font-size: 1.25rem;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-green-glow);
   border-radius: var(--radius-full);
-  flex-shrink: 0;
+  border: 1px solid var(--accent-green);
 }
 
-.period-indicator.before {
-  background: #ff6b6b;
-}
-
-.period-indicator.during {
-  background: var(--accent-green);
-}
-
-.period-indicator.after {
-  background: #4ecdc4;
-}
-
-.period-title {
+.country-name {
   font-size: 1rem;
   font-weight: 600;
   color: var(--accent-green);
-  margin: 0;
 }
 
-.period-description {
+.impact-description {
   color: var(--text-secondary);
   line-height: 1.6;
   font-size: 0.875rem;
@@ -229,27 +284,42 @@ const handleCardLeave = (event: Event) => {
     font-size: 2rem;
   }
 
-  .countries-grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
-  }
-
-  .country-card {
+  .timeline-container {
     padding: var(--spacing-lg);
   }
 
-  .country-flag {
-    font-size: 1.5rem;
-    width: 40px;
-    height: 40px;
+  .timeline {
+    padding-left: var(--spacing-lg);
   }
 
-  .country-name {
-    font-size: 1.25rem;
+  .timeline::before {
+    left: 16px;
   }
 
-  .period-item {
-    padding: var(--spacing-md);
+  .period-marker {
+    left: -24px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .marker-icon {
+    font-size: 0.875rem;
+  }
+
+  .period-content {
+    padding: var(--spacing-lg);
+  }
+
+  .period-title {
+    font-size: 1.125rem;
+  }
+
+  .countries-impact {
+    gap: var(--spacing-md);
+  }
+
+  .country-impact {
+    padding: var(--spacing-sm);
   }
 }
 
@@ -266,16 +336,53 @@ const handleCardLeave = (event: Event) => {
     font-size: 1rem;
   }
 
-  .country-header {
-    flex-direction: column;
-    text-align: center;
-    gap: var(--spacing-sm);
+  .timeline-container {
+    padding: var(--spacing-md);
   }
 
-  .period-header {
+  .timeline {
+    padding-left: var(--spacing-md);
+  }
+
+  .timeline::before {
+    left: 12px;
+  }
+
+  .period-marker {
+    left: -20px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .marker-icon {
+    font-size: 0.75rem;
+  }
+
+  .period-content {
+    padding: var(--spacing-md);
+  }
+
+  .period-title {
+    font-size: 1rem;
     flex-direction: column;
     align-items: flex-start;
     gap: var(--spacing-xs);
+  }
+
+  .country-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+  }
+
+  .country-flag {
+    font-size: 1rem;
+    width: 25px;
+    height: 25px;
+  }
+
+  .country-name {
+    font-size: 0.875rem;
   }
 }
 </style>
