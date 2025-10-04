@@ -143,20 +143,20 @@
         <div class="stats-container">
           <div class="stats-grid">
             <div class="stat-item">
-              <div class="stat-value">30.2K+</div>
-              <div class="stat-label">Happy Clients</div>
+              <div class="stat-value">596</div>
+              <div class="stat-label">Cities Analyzed</div>
             </div>
             <div class="stat-item">
-              <div class="stat-value">120+</div>
-              <div class="stat-label">Projects Delivered</div>
+              <div class="stat-value">3</div>
+              <div class="stat-label">Countries Studied</div>
             </div>
             <div class="stat-item">
-              <div class="stat-value">4.9/5</div>
-              <div class="stat-label">Average Rating</div>
+              <div class="stat-value">54.5%</div>
+              <div class="stat-label">NO₂ Reduction</div>
             </div>
             <div class="stat-item">
-              <div class="stat-value">82.1%</div>
-              <div class="stat-label">Success Rate</div>
+              <div class="stat-value">2020-2022</div>
+              <div class="stat-label">Study Period</div>
             </div>
           </div>
         </div>
@@ -182,7 +182,7 @@
                   <a
                     href="mailto:contact@AtmosCOVID.agency"
                     class="contact-value"
-                    >contact@AtmosCOVID.com</a
+                    >research@atmoscovid.org</a
                   >
                 </div>
                 <div class="contact-item">
@@ -201,24 +201,26 @@
             <!-- Footer Stats -->
             <div class="footer-section">
               <h3 class="footer-title">STATISTICS</h3>
-              <h4 class="footer-headline">Step Into the Future.</h4>
+              <h4 class="footer-headline">
+                Protecting Our Planet Through Research.
+              </h4>
 
               <div class="footer-stats">
                 <div class="footer-stat-item">
-                  <span class="footer-stat-value">30.2K+</span>
-                  <span class="footer-stat-label">Happy Clients</span>
+                  <span class="footer-stat-value">596</span>
+                  <span class="footer-stat-label">Cities Analyzed</span>
                 </div>
                 <div class="footer-stat-item">
-                  <span class="footer-stat-value">120+</span>
-                  <span class="footer-stat-label">Projects Delivered</span>
+                  <span class="footer-stat-value">3</span>
+                  <span class="footer-stat-label">Countries Studied</span>
                 </div>
                 <div class="footer-stat-item">
-                  <span class="footer-stat-value">4.9/5</span>
-                  <span class="footer-stat-label">Average Rating</span>
+                  <span class="footer-stat-value">54.5%</span>
+                  <span class="footer-stat-label">NO₂ Reduction</span>
                 </div>
                 <div class="footer-stat-item">
-                  <span class="footer-stat-value">82.1%</span>
-                  <span class="footer-stat-label">Success Rate</span>
+                  <span class="footer-stat-value">2020-2022</span>
+                  <span class="footer-stat-label">Study Period</span>
                 </div>
               </div>
             </div>

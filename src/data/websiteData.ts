@@ -24,67 +24,68 @@ export const websiteData: WebsiteData = {
   ],
 
   hero: {
-    title: "Step Into the Future. Shape the Virtual World.",
+    title: "Understanding Our Atmosphere. Protecting Our Planet.",
     subtitle:
-      "Unlock immersive digital experiences designed to elevate your brand in the metaverse and beyond.",
+      "Exploring the impact of COVID-19 on air quality, vegetation, and environmental solutions.",
     description:
-      "At AtmosCOVID, we craft custom virtual environments, interactive worlds, and futuristic solutions that connect innovation with imagination.",
+      "At AtmosCOVID, we analyze atmospheric changes, air pollution patterns, vegetation responses, and develop solutions for a healthier planet.",
     primaryAction: {
-      id: "book-call",
-      label: "Book a Call",
+      id: "explore-data",
+      label: "Explore Data",
       type: "button",
       variant: "primary",
-      href: "/contact",
+      href: "/data",
     },
     secondaryAction: {
-      id: "view-portfolio",
-      label: "View Portfolio",
+      id: "learn-more",
+      label: "Learn More",
       type: "button",
       variant: "secondary",
-      href: "/portfolio",
+      href: "/research",
     },
   },
 
   services: [
     {
-      id: "virtual-environment",
-      icon: "🏢",
-      title: "Virtual Environment Design",
+      id: "atmosphere-analysis",
+      icon: "🌍",
+      title: "Atmosphere Analysis",
       description:
-        "Custom-designed 3D spaces for events, showrooms, virtual offices, and immersive experiences.",
+        "Comprehensive analysis of atmospheric changes, ozone levels, and environmental impact studies.",
       actionLabel: "Learn More",
-      actionHref: "/services/virtual-environment",
+      actionHref: "/services/atmosphere",
     },
     {
-      id: "metaverse-development",
-      icon: "🌐",
-      title: "Metaverse Development",
+      id: "air-pollution-monitoring",
+      icon: "🌫️",
+      title: "Air Pollution Monitoring",
       description:
-        "We build scalable metaverse platforms and integrate your brand into leading virtual ecosystems.",
+        "Real-time monitoring and analysis of air quality, pollutants, and their effects on health and environment.",
       actionLabel: "Learn More",
-      actionHref: "/services/metaverse",
+      actionHref: "/services/pollution",
     },
     {
-      id: "vr-ar-creation",
-      icon: "🥽",
-      title: "VR/AR Experience Creation",
+      id: "vegetation-response",
+      icon: "🌱",
+      title: "Vegetation Response Studies",
       description:
-        "Interactive and immersive Virtual & Augmented Reality experiences for marketing, training, or engagement.",
+        "Research on how vegetation responds to environmental changes and pollution reduction measures.",
       actionLabel: "Learn More",
-      actionHref: "/services/vr-ar",
+      actionHref: "/services/vegetation",
     },
   ],
 
   team: {
-    title: "Meet Our Team",
-    subtitle: "The creative minds behind our innovative virtual experiences",
+    title: "Meet Our Research Team",
+    subtitle:
+      "The scientists and researchers behind our atmospheric and environmental studies",
     members: [
       {
         id: "shajwan",
         name: "Shajwan",
-        role: "Lead Developer",
+        role: "Atmospheric Scientist",
         description:
-          "Passionate about creating immersive virtual environments and cutting-edge VR experiences.",
+          "Specializes in ozone layer analysis and atmospheric chemistry research.",
         socialLinks: {
           linkedin: "https://linkedin.com/in/shajwan",
           github: "https://github.com/shajwan",
@@ -93,9 +94,9 @@ export const websiteData: WebsiteData = {
       {
         id: "sahand",
         name: "Sahand",
-        role: "Technical Lead",
+        role: "Environmental Researcher",
         description:
-          "Visionary designer specializing in metaverse architecture and interactive digital worlds.",
+          "Expert in air pollution monitoring and environmental impact assessment.",
         socialLinks: {
           linkedin: "https://linkedin.com/in/sahand",
           twitter: "https://twitter.com/sahand",
@@ -104,9 +105,9 @@ export const websiteData: WebsiteData = {
       {
         id: "alle",
         name: "Alle",
-        role: "Creative Director",
+        role: "Data Analyst",
         description:
-          "Expert in AR/VR technologies and scalable virtual platform development.",
+          "Focuses on vegetation response data analysis and environmental modeling.",
         socialLinks: {
           linkedin: "https://linkedin.com/in/alle",
           github: "https://github.com/alle",
@@ -263,102 +264,23 @@ export const websiteData: WebsiteData = {
     ],
   },
 
-  sidebar: {
-    aboutSection: {
-      title: "ABOUT US",
-      headline: "We Build Worlds Beyond Imagination",
-      services: [
-        {
-          id: "virtual-events",
-          icon: "🎪",
-          title: "Virtual Event Production",
-          description:
-            "Create unforgettable virtual events that engage audiences worldwide.",
-          actionLabel: "Learn More",
-          actionHref: "/services/events",
-        },
-        {
-          id: "brand-storytelling",
-          icon: "📖",
-          title: "Immersive Brand Storytelling",
-          description:
-            "Tell your brand story through interactive virtual experiences.",
-          actionLabel: "Learn More",
-          actionHref: "/services/storytelling",
-        },
-        {
-          id: "custom-3d",
-          icon: "🎨",
-          title: "Custom 3D Experiences",
-          description:
-            "Bespoke 3D environments tailored to your specific needs.",
-          actionLabel: "Learn More",
-          actionHref: "/services/3d",
-        },
-        {
-          id: "virtual-office",
-          icon: "🏢",
-          title: "Virtual Office Solutions",
-          description:
-            "Transform remote work with immersive virtual office spaces.",
-          actionLabel: "Learn More",
-          actionHref: "/services/office",
-        },
-        {
-          id: "metaverse-dev",
-          icon: "🚀",
-          title: "Metaverse Development",
-          description:
-            "Build your presence in the next generation of digital worlds.",
-          actionLabel: "Learn More",
-          actionHref: "/services/metaverse-dev",
-        },
-        {
-          id: "ar-vr-content",
-          icon: "🎬",
-          title: "AR/VR Content Creation",
-          description:
-            "High-quality content for augmented and virtual reality platforms.",
-          actionLabel: "Learn More",
-          actionHref: "/services/content",
-        },
-      ],
-    },
-    pageSection: {
-      title: "OUR PAGE",
-      headline: "Transforming Ideas into Virtual Realities",
-      visual: "🌀",
-    },
-    visualStats: {
-      value1: "+120",
-      value2: "50K+",
-      description:
-        "Interactive and immersive Virtual & Augmented Reality experiences for marketing, training, or engagement.",
-    },
-    statistics: [
-      { value: "30.2K+", label: "Projects Completed" },
-      { value: "120+", label: "Team Members" },
-      { value: "4.9/5", label: "Client Rating" },
-      { value: "82.1%", label: "Success Rate" },
-    ],
-  },
-
   footer: {
     logo: "AtmosCOVID",
     contact: {
-      email: "example@gmail.com",
+      email: "research@atmoscovid.org",
       phone: "+1 (555) 123-4567",
-      address: "123 Virtual Street, Metaverse City, MV 12345",
+      address:
+        "Environmental Research Center, Science District, Research City, RC 12345",
     },
     statistics: {
-      title: "STATISTICS",
+      title: "RESEARCH STATISTICS",
       items: [
-        { value: "30.2K+", label: "Happy Clients" },
-        { value: "120+", label: "Projects Delivered" },
-        { value: "4.9/5", label: "Average Rating" },
-        { value: "82.1%", label: "Success Rate" },
+        { value: "596", label: "Cities Analyzed" },
+        { value: "3", label: "Countries Studied" },
+        { value: "54.5%", label: "NO₂ Reduction" },
+        { value: "2020-2022", label: "Study Period" },
       ],
     },
-    tagline: "Step Into the Future.",
+    tagline: "Protecting Our Planet Through Research.",
   },
 };

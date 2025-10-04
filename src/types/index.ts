@@ -117,21 +117,6 @@ export interface FooterSection {
   tagline: string;
 }
 
-export interface SidebarContent {
-  aboutSection: AboutSection;
-  pageSection: {
-    title: string;
-    headline: string;
-    visual: string;
-  };
-  visualStats: {
-    value1: string;
-    value2: string;
-    description: string;
-  };
-  statistics: StatisticsItem[];
-}
-
 export interface WebsiteData {
   navigation: NavigationItem[];
   searchBar: SearchBar;
@@ -141,7 +126,6 @@ export interface WebsiteData {
   team: TeamSection;
   airQuality: AirQualitySection;
   vegetationResponse: VegetationResponseSection;
-  sidebar: SidebarContent;
   footer: FooterSection;
 }
 
@@ -171,10 +155,6 @@ export interface AirQualityProps {
 
 export interface VegetationResponseProps {
   vegetationResponse: VegetationResponseSection;
-}
-
-export interface SidebarProps {
-  sidebar: SidebarContent;
 }
 
 export interface FooterProps {
