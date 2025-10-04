@@ -192,7 +192,37 @@ export interface FooterProps {
   footer: FooterSection;
 }
 
+export interface SidebarSection {
+  title: string;
+  headline: string;
+}
+
+export interface SidebarAboutSection extends SidebarSection {
+  services: Service[];
+}
+
+export interface SidebarPageSection extends SidebarSection {
+  visual: string;
+}
+
+export interface SidebarVisualStats {
+  value1: string;
+  value2: string;
+  description: string;
+}
+
+export interface SidebarStatisticsItem {
+  value: string;
+  label: string;
+}
+
+export interface SidebarData {
+  aboutSection: SidebarAboutSection;
+  pageSection: SidebarPageSection;
+  visualStats: SidebarVisualStats;
+  statistics: SidebarStatisticsItem[];
+}
+
 export interface SidebarProps {
-  // Add any sidebar-specific props here if needed
-  // For now, empty interface since no specific props are used
+  sidebar: SidebarData;
 }
