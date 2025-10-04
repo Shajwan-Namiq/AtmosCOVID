@@ -130,6 +130,9 @@
         </div>
       </section>
 
+      <!-- Team Section -->
+      <Team :team="websiteData.team" />
+
       <!-- Statistics Section -->
       <section class="statistics">
         <div class="stats-container">
@@ -227,6 +230,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import Hero from "./components/Hero.vue";
+import Team from "./components/Team.vue";
 import { websiteData } from "./data/websiteData";
 
 const mobileMenuOpen = ref(false);

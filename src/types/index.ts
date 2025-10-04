@@ -8,8 +8,8 @@ export interface NavigationItem {
 export interface UserAction {
   id: string;
   label: string;
-  type: 'button' | 'link';
-  variant?: 'primary' | 'secondary';
+  type: "button" | "link";
+  variant?: "primary" | "secondary";
   href?: string;
 }
 
@@ -61,14 +61,13 @@ export interface ContactInfo {
 export interface TeamMember {
   id: string;
   name: string;
-  position: string;
-  bio: string;
-  image?: string;
+  role: string;
+  description: string;
+  avatar?: string;
   socialLinks?: {
     linkedin?: string;
     twitter?: string;
     github?: string;
-    email?: string;
   };
 }
 
@@ -127,12 +126,12 @@ export interface ServicesProps {
   services: Service[];
 }
 
-export interface SidebarProps {
-  sidebar: SidebarContent;
-}
-
 export interface TeamProps {
   team: TeamSection;
+}
+
+export interface SidebarProps {
+  sidebar: SidebarContent;
 }
 
 export interface FooterProps {

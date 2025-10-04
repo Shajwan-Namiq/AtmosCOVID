@@ -77,17 +77,39 @@ export const websiteData: WebsiteData = {
 
   team: {
     title: "Meet Our Team",
-    subtitle: "The visionaries behind the virtual revolution",
+    subtitle: "The creative minds behind our innovative virtual experiences",
     members: [
       {
-        id: "shajwan-sahand-alle",
-        name: "Shajwan Sahand Alle",
-        position: "Founder & CEO",
-        bio: "Visionary leader with over 10 years of experience in virtual reality and metaverse development. Shajwan leads our team in creating groundbreaking digital experiences that push the boundaries of what's possible in virtual worlds.",
+        id: "shajwan",
+        name: "Shajwan",
+        role: "Lead Developer",
+        description:
+          "Passionate about creating immersive virtual environments and cutting-edge VR experiences.",
         socialLinks: {
-          linkedin: "https://linkedin.com/in/shajwan-sahand-alle",
-          twitter: "https://twitter.com/shajwan_alle",
-          email: "shajwan@viper.agency",
+          linkedin: "https://linkedin.com/in/shajwan",
+          github: "https://github.com/shajwan",
+        },
+      },
+      {
+        id: "sahand",
+        name: "Sahand",
+        role: "Technical Lead",
+        description:
+          "Visionary designer specializing in metaverse architecture and interactive digital worlds.",
+        socialLinks: {
+          linkedin: "https://linkedin.com/in/sahand",
+          twitter: "https://twitter.com/sahand",
+        },
+      },
+      {
+        id: "alle",
+        name: "Alle",
+        role: "Creative Director",
+        description:
+          "Expert in AR/VR technologies and scalable virtual platform development.",
+        socialLinks: {
+          linkedin: "https://linkedin.com/in/alle",
+          github: "https://github.com/alle",
         },
       },
     ],
