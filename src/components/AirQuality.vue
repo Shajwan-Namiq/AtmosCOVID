@@ -36,7 +36,10 @@
                     <span class="country-name">{{ country.name }}</span>
                   </div>
                   <p class="impact-description">
-                    {{ country.periods[periodIndex].description }}
+                    {{
+                      country.periods[periodIndex]?.description ||
+                      "No description available"
+                    }}
                   </p>
                 </div>
               </div>

@@ -191,3 +191,8 @@ export interface ChartsProps {
 export interface FooterProps {
   footer: FooterSection;
 }
+
+export interface SidebarProps {
+  // Add any sidebar-specific props here if needed
+  // For now, empty interface since no specific props are used
+}
