@@ -133,6 +133,9 @@
       <!-- Team Section -->
       <Team :team="websiteData.team" />
 
+      <!-- Air Quality Section -->
+      <AirQuality :airQuality="websiteData.airQuality" />
+
       <!-- Statistics Section -->
       <section class="statistics">
         <div class="stats-container">
@@ -231,6 +234,7 @@
 import { ref } from "vue";
 import Hero from "./components/Hero.vue";
 import Team from "./components/Team.vue";
+import AirQuality from "./components/AirQuality.vue";
 import { websiteData } from "./data/websiteData";
 
 const mobileMenuOpen = ref(false);

@@ -115,6 +115,80 @@ export const websiteData: WebsiteData = {
     ],
   },
 
+  airQuality: {
+    title: "Global Air Quality Impact",
+    subtitle:
+      "How COVID-19 lockdowns affected air pollution across major countries",
+    countries: [
+      {
+        id: "india",
+        name: "India",
+        flag: "🇮🇳",
+        periods: [
+          {
+            period: "Before COVID (2019)",
+            description:
+              "India had some of the world's highest PM₂.₅ and PM₁₀ levels across major cities.",
+          },
+          {
+            period: "During COVID (2020)",
+            description:
+              "Strict lockdowns caused major declines in NO₂, PM₂.₅, and PM₁₀ due to reduced traffic and industry; studies across 596 cities confirmed sharp improvements.",
+          },
+          {
+            period: "After COVID (2021–2022)",
+            description:
+              "Pollution rebounded as activity resumed, though some cities sustained gains through cleaner energy and vehicle policies.",
+          },
+        ],
+      },
+      {
+        id: "china",
+        name: "China",
+        flag: "🇨🇳",
+        periods: [
+          {
+            period: "Before COVID (2019)",
+            description:
+              "Pollution levels were high but steadily improving under strong national control programs.",
+          },
+          {
+            period: "During COVID (2020)",
+            description:
+              "Early and strict lockdowns led to steep NO₂, PM₂.₅, and SO₂ reductions, especially in industrial hubs.",
+          },
+          {
+            period: "After COVID (2021–2022)",
+            description:
+              "Emissions rose again with recovery, but long-term air quality progress remained due to continued regulation.",
+          },
+        ],
+      },
+      {
+        id: "united-states",
+        name: "United States",
+        flag: "🇺🇸",
+        periods: [
+          {
+            period: "Before COVID (2019)",
+            description:
+              "Overall low baseline pollution, with data showing regional hotspots.",
+          },
+          {
+            period: "During COVID (2020)",
+            description:
+              "Traffic-related pollutants (especially NO₂) dropped modestly; weather and seasonal effects influenced results.",
+          },
+          {
+            period: "After COVID (2021–2022)",
+            description:
+              "Most levels returned to normal, though shifts like remote work and cleaner transport slightly limited the rebound.",
+          },
+        ],
+      },
+    ],
+  },
+
   sidebar: {
     aboutSection: {
       title: "ABOUT US",

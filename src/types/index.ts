@@ -77,6 +77,39 @@ export interface TeamSection {
   members: TeamMember[];
 }
 
+export interface AirQualityPeriod {
+  period: string;
+  description: string;
+}
+
+export interface CountryAirQuality {
+  id: string;
+  name: string;
+  flag: string;
+  periods: AirQualityPeriod[];
+}
+
+export interface AirQualitySection {
+  title: string;
+  subtitle: string;
+  countries: CountryAirQuality[];
+}
+
+export interface VegetationFinding {
+  id: string;
+  title: string;
+  description: string;
+  location?: string;
+  impact?: string;
+}
+
+export interface VegetationResponseSection {
+  title: string;
+  subtitle: string;
+  findings: VegetationFinding[];
+  imageUrl?: string;
+}
+
 export interface FooterSection {
   logo: string;
   contact: ContactInfo;
@@ -106,6 +139,7 @@ export interface WebsiteData {
   hero: HeroSection;
   services: Service[];
   team: TeamSection;
+  airQuality: AirQualitySection;
   sidebar: SidebarContent;
   footer: FooterSection;
 }
@@ -128,6 +162,10 @@ export interface ServicesProps {
 
 export interface TeamProps {
   team: TeamSection;
+}
+
+export interface AirQualityProps {
+  airQuality: AirQualitySection;
 }
 
 export interface SidebarProps {
