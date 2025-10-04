@@ -167,7 +167,7 @@ const getPeriodIcon = (index: number): string => {
 
 .period-marker {
   position: absolute;
-  left: -32px;
+  left: -44px;
   top: 0;
   width: 40px;
   height: 40px;
