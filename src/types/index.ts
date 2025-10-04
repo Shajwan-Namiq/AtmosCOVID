@@ -58,6 +58,26 @@ export interface ContactInfo {
   address?: string;
 }
 
+export interface TeamMember {
+  id: string;
+  name: string;
+  position: string;
+  bio: string;
+  image?: string;
+  socialLinks?: {
+    linkedin?: string;
+    twitter?: string;
+    github?: string;
+    email?: string;
+  };
+}
+
+export interface TeamSection {
+  title: string;
+  subtitle: string;
+  members: TeamMember[];
+}
+
 export interface FooterSection {
   logo: string;
   contact: ContactInfo;
@@ -86,6 +106,7 @@ export interface WebsiteData {
   userActions: UserAction[];
   hero: HeroSection;
   services: Service[];
+  team: TeamSection;
   sidebar: SidebarContent;
   footer: FooterSection;
 }
@@ -108,6 +129,10 @@ export interface ServicesProps {
 
 export interface SidebarProps {
   sidebar: SidebarContent;
+}
+
+export interface TeamProps {
+  team: TeamSection;
 }
 
 export interface FooterProps {
