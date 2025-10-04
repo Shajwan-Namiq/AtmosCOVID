@@ -6,8 +6,8 @@
       <header class="header">
         <div class="header-container">
           <div class="logo-section">
-            <div class="logo-icon">V</div>
-            <span class="logo-text">VIPER</span>
+            <div class="logo-icon">A</div>
+            <span class="logo-text">AtmosCOVID</span>
           </div>
 
           <button class="mobile-menu-btn" @click="toggleMobileMenu">
@@ -136,6 +136,11 @@
       <!-- Air Quality Section -->
       <AirQuality :airQuality="websiteData.airQuality" />
 
+      <!-- Vegetation Response Section -->
+      <VegetationResponse
+        :vegetationResponse="websiteData.vegetationResponse"
+      />
+
       <!-- Statistics Section -->
       <section class="statistics">
         <div class="stats-container">
@@ -168,14 +173,14 @@
             <div class="footer-section">
               <div class="footer-logo">
                 <div class="logo-icon">V</div>
-                <span class="logo-text">VIPER</span>
+                <span class="logo-text">AtmosCOVID</span>
               </div>
 
               <div class="contact-info">
                 <div class="contact-item">
                   <span class="contact-label">Email</span>
-                  <a href="mailto:contact@viper.agency" class="contact-value"
-                    >contact@viper.agency</a
+                  <a href="mailto:contact@AtmosCOVID.agency" class="contact-value"
+                    >contact@AtmosCOVID.com</a
                   >
                 </div>
                 <div class="contact-item">
@@ -221,7 +226,7 @@
 
           <div class="footer-bottom">
             <p class="footer-copyright">
-              © 2024 Viper Agency. All rights reserved.
+              © 2025 AtmosCOVID. All rights reserved.
             </p>
           </div>
         </div>
@@ -235,6 +240,7 @@ import { ref } from "vue";
 import Hero from "./components/Hero.vue";
 import Team from "./components/Team.vue";
 import AirQuality from "./components/AirQuality.vue";
+import VegetationResponse from "./components/VegetationResponse.vue";
 import { websiteData } from "./data/websiteData";
 
 const mobileMenuOpen = ref(false);
@@ -255,7 +261,7 @@ const handleCardLeave = (event: Event) => {
   card.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.1)";
 };
 
-console.log("Modern Viper Agency website loaded successfully!");
+console.log("Modern AtmosCOVID Agency website loaded successfully!");
 </script>
 
 <style>

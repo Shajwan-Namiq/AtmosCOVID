@@ -5,8 +5,8 @@
         <!-- Logo Section -->
         <div class="logo-section">
           <div class="logo">
-            <div class="logo-icon">V</div>
-            <span class="logo-text">VIPER</span>
+            <div class="logo-icon">A</div>
+            <span class="logo-text">AtmosCOVID</span>
           </div>
         </div>
 

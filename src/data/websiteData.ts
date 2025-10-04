@@ -28,7 +28,7 @@ export const websiteData: WebsiteData = {
     subtitle:
       "Unlock immersive digital experiences designed to elevate your brand in the metaverse and beyond.",
     description:
-      "At Viper, we craft custom virtual environments, interactive worlds, and futuristic solutions that connect innovation with imagination.",
+      "At AtmosCOVID, we craft custom virtual environments, interactive worlds, and futuristic solutions that connect innovation with imagination.",
     primaryAction: {
       id: "book-call",
       label: "Book a Call",
@@ -189,6 +189,80 @@ export const websiteData: WebsiteData = {
     ],
   },
 
+  vegetationResponse: {
+    title: "Vegetation Response to COVID-19 Lockdowns",
+    subtitle:
+      "How reduced emissions led to improved vegetation health and growth worldwide",
+    findings: [
+      {
+        id: "global-overview",
+        title: "Global Vegetation Increase",
+        description:
+          "Global COVID-19 lockdowns led to temporary vegetation increases in many regions as air pollution and aerosols dropped.",
+        impact:
+          "MODIS and Sentinel-2 observations showed higher NDVI and GPP during 2020 compared with pre-pandemic years.",
+      },
+      {
+        id: "sunlight-improvement",
+        title: "Enhanced Photosynthesis",
+        description:
+          "Reduced aerosol optical depth allowed more sunlight to reach canopies, improving photosynthesis efficiency.",
+        impact:
+          "Better light penetration led to increased plant productivity across multiple ecosystems.",
+      },
+      {
+        id: "ozone-reduction",
+        title: "Reduced Ozone Stress",
+        description:
+          "Lower NO₂ and SO₂ emissions decreased ozone stress on vegetation.",
+        impact:
+          "Plants experienced less atmospheric stress, leading to healthier growth patterns.",
+      },
+      {
+        id: "erbil-case",
+        title: "Erbil Case Study",
+        description:
+          "Sentinel-2 imagery revealed NDVI increases and a 54.5% drop in NO₂ during lockdown months.",
+        location: "Erbil, Iraq",
+        impact:
+          "Significant vegetation recovery in urban areas with reduced industrial activity.",
+      },
+      {
+        id: "dust-reduction",
+        title: "Reduced Dust Impact",
+        description:
+          "Reduced dust and construction supported fast greening across semi-arid urban zones.",
+        impact:
+          "Urban vegetation showed rapid recovery in areas with decreased construction and dust.",
+      },
+      {
+        id: "salt-lake-city",
+        title: "Urban Park Recovery",
+        description:
+          "Salt Lake City experienced moderate NDVI gains in urban parks linked to lower CO₂ and traffic emissions.",
+        location: "Salt Lake City, USA",
+        impact:
+          "Urban green spaces showed measurable improvement in vegetation health.",
+      },
+      {
+        id: "regional-variation",
+        title: "Regional Variations",
+        description:
+          "Regional variation showed meteorology controlled local outcomes—drought offset greening in some areas.",
+        impact:
+          "Climate conditions played a significant role in determining vegetation response effectiveness.",
+      },
+      {
+        id: "rapid-recovery",
+        title: "Immediate Benefits",
+        description:
+          "Urban vegetation's rapid recovery demonstrates that emission cuts can produce immediate ecological benefits.",
+        impact:
+          "Proves that environmental policies can yield quick positive results for urban ecosystems.",
+      },
+    ],
+  },
+
   sidebar: {
     aboutSection: {
       title: "ABOUT US",
@@ -270,7 +344,7 @@ export const websiteData: WebsiteData = {
   },
 
   footer: {
-    logo: "VIPER",
+    logo: "AtmosCOVID",
     contact: {
       email: "example@gmail.com",
       phone: "+1 (555) 123-4567",

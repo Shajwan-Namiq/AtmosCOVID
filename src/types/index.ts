@@ -140,6 +140,7 @@ export interface WebsiteData {
   services: Service[];
   team: TeamSection;
   airQuality: AirQualitySection;
+  vegetationResponse: VegetationResponseSection;
   sidebar: SidebarContent;
   footer: FooterSection;
 }
@@ -166,6 +167,10 @@ export interface TeamProps {
 
 export interface AirQualityProps {
   airQuality: AirQualitySection;
+}
+
+export interface VegetationResponseProps {
+  vegetationResponse: VegetationResponseSection;
 }
 
 export interface SidebarProps {

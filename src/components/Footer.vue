@@ -51,9 +51,7 @@
 
       <!-- Footer Bottom -->
       <div class="footer-bottom">
-        <p class="footer-copyright">
-          © 2024 Viper Agency. All rights reserved.
-        </p>
+        <p class="footer-copyright">© 2025 AtmosCOVID. All rights reserved.</p>
       </div>
     </div>
   </footer>
