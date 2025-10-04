@@ -10,7 +10,6 @@
             <span class="logo-text">VIPER</span>
           </div>
 
-          <!-- Mobile Menu Button -->
           <button class="mobile-menu-btn" @click="toggleMobileMenu">
             <span></span>
             <span></span>
