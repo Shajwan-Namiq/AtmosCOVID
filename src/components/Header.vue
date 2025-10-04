@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <div class="container">
+    <div class="header-container">
       <nav class="nav">
         <!-- Logo Section -->
         <div class="logo-section">
@@ -10,8 +10,15 @@
           </div>
         </div>
 
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-btn" @click="toggleMobileMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
         <!-- Navigation Links -->
-        <div class="nav-links">
+        <div class="nav-links" :class="{ 'nav-links-open': mobileMenuOpen }">
           <a
             v-for="item in navigation"
             :key="item.id"
@@ -23,7 +30,7 @@
         </div>
 
         <!-- Search and Actions -->
-        <div class="nav-actions">
+        <div class="nav-actions" :class="{ 'nav-actions-open': mobileMenuOpen }">
           <!-- Search Bar -->
           <div class="search-container">
             <input
@@ -56,9 +63,16 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
 import type { HeaderProps } from "../types";
 
 defineProps<HeaderProps>();
+
+const mobileMenuOpen = ref(false);
+
+const toggleMobileMenu = () => {
+  mobileMenuOpen.value = !mobileMenuOpen.value;
+};
 </script>
 
 <style scoped>

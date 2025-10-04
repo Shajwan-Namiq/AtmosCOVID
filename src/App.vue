@@ -39,96 +39,8 @@
       <!-- Hero Section -->
       <Hero :hero="websiteData.hero" />
 
-      <!-- Services Section -->
-      <section class="services">
-        <div class="services-container">
-          <div class="services-grid">
-            <!-- Service 1 -->
-            <div
-              class="service-card"
-              @mouseenter="handleCardHover"
-              @mouseleave="handleCardLeave"
-            >
-              <div class="service-icon">
-                <div class="icon-bg">🏢</div>
-              </div>
-              <h3 class="service-title">Virtual Environment Design</h3>
-              <p class="service-description">
-                Custom-designed 3D spaces for events, showrooms, virtual
-                offices, and immersive experiences.
-              </p>
-              <a href="#" class="service-link">
-                Learn More
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M5 12h14m-7-7l7 7-7 7"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </a>
-            </div>
-
-            <!-- Service 2 -->
-            <div
-              class="service-card"
-              @mouseenter="handleCardHover"
-              @mouseleave="handleCardLeave"
-            >
-              <div class="service-icon">
-                <div class="icon-bg">🌐</div>
-              </div>
-              <h3 class="service-title">Metaverse Development</h3>
-              <p class="service-description">
-                We build scalable metaverse platforms and integrate your brand
-                into leading virtual ecosystems.
-              </p>
-              <a href="#" class="service-link">
-                Learn More
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M5 12h14m-7-7l7 7-7 7"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </a>
-            </div>
-
-            <!-- Service 3 -->
-            <div
-              class="service-card"
-              @mouseenter="handleCardHover"
-              @mouseleave="handleCardLeave"
-            >
-              <div class="service-icon">
-                <div class="icon-bg">🥽</div>
-              </div>
-              <h3 class="service-title">VR/AR Experience Creation</h3>
-              <p class="service-description">
-                Interactive and immersive Virtual & Augmented Reality
-                experiences for marketing, training, or engagement.
-              </p>
-              <a href="#" class="service-link">
-                Learn More
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M5 12h14m-7-7l7 7-7 7"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <!-- Charts Section -->
+      <Charts :charts="websiteData.charts" />
 
       <!-- Air Quality Section -->
       <AirQuality :airQuality="websiteData.airQuality" />
@@ -193,7 +105,7 @@
                 </div>
                 <div class="contact-item">
                   <span class="contact-label">Address</span>
-                  <span class="contact-value">Iraq,Sulaimaniyah</span>
+                  <span class="contact-value">Iraq,Sulaimanyah</span>
                 </div>
               </div>
             </div>
@@ -240,6 +152,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import Hero from "./components/Hero.vue";
+import Charts from "./components/Charts.vue";
 import Team from "./components/Team.vue";
 import AirQuality from "./components/AirQuality.vue";
 import VegetationResponse from "./components/VegetationResponse.vue";

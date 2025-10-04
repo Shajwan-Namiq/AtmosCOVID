@@ -110,6 +110,32 @@ export interface VegetationResponseSection {
   imageUrl?: string;
 }
 
+export interface ChartDataPoint {
+  month: string;
+  value: number;
+  year: number;
+}
+
+export interface CityChart {
+  id: string;
+  name: string;
+  country: string;
+  flag: string;
+  data: ChartDataPoint[];
+  lockdownPeriod: {
+    start: string;
+    end: string;
+  };
+  maxValue: number;
+  minValue: number;
+}
+
+export interface ChartsSection {
+  title: string;
+  subtitle: string;
+  charts: CityChart[];
+}
+
 export interface FooterSection {
   logo: string;
   contact: ContactInfo;
@@ -123,6 +149,7 @@ export interface WebsiteData {
   userActions: UserAction[];
   hero: HeroSection;
   services: Service[];
+  charts: ChartsSection;
   team: TeamSection;
   airQuality: AirQualitySection;
   vegetationResponse: VegetationResponseSection;
@@ -155,6 +182,10 @@ export interface AirQualityProps {
 
 export interface VegetationResponseProps {
   vegetationResponse: VegetationResponseSection;
+}
+
+export interface ChartsProps {
+  charts: ChartsSection;
 }
 
 export interface FooterProps {
