@@ -52,12 +52,11 @@
           </div>
         </div>
 
-        <!-- Image placeholder for future image -->
+        <!-- Satellite Image -->
         <div class="vegetation-image-section">
-          <div class="image-placeholder">
-            <div class="placeholder-icon">🛰️</div>
-            <p class="placeholder-text">Satellite Imagery</p>
-            <p class="placeholder-subtext">NASA & ESA Data Visualization</p>
+          <div class="satellite-image-container">
+            <img :src="satelliteImage" class="satellite-image" />
+            <div class="image-overlay"></div>
           </div>
         </div>
       </div>
@@ -68,6 +67,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import type { VegetationResponseProps } from "../types";
+import satelliteImage from "../assets/images/settlite.jpeg";
 
 defineProps<VegetationResponseProps>();
 
@@ -291,37 +291,51 @@ const toggleAccordion = (index: number) => {
   min-height: 400px;
 }
 
-.image-placeholder {
-  background: var(--card-bg);
-  border: 2px dashed var(--border-color);
-  border-radius: var(--radius-xl);
-  padding: var(--spacing-3xl);
-  text-align: center;
+.satellite-image-container {
+  position: relative;
   width: 100%;
-  max-width: 300px;
+  max-width: 350px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
 }
 
-.image-placeholder:hover {
-  border-color: var(--accent-green);
-  background: var(--accent-green-glow);
+.satellite-image-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 255, 136, 0.2);
 }
 
-.placeholder-icon {
-  font-size: 3rem;
-  margin-bottom: var(--spacing-md);
+.satellite-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-xl);
 }
 
-.placeholder-text {
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: var(--spacing-lg);
+  text-align: center;
+}
+
+.image-text {
   color: var(--text-primary);
   font-size: 1.125rem;
   font-weight: 600;
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.placeholder-subtext {
-  color: var(--text-secondary);
+.image-subtext {
+  color: var(--accent-green);
   font-size: 0.875rem;
+  font-weight: 500;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Responsive Design */
@@ -336,9 +350,8 @@ const toggleAccordion = (index: number) => {
     min-height: 200px;
   }
 
-  .image-placeholder {
-    max-width: 250px;
-    padding: var(--spacing-2xl);
+  .satellite-image-container {
+    max-width: 300px;
   }
 }
 
@@ -397,12 +410,20 @@ const toggleAccordion = (index: number) => {
     padding: 0 var(--spacing-md) var(--spacing-md);
   }
 
-  .image-placeholder {
-    padding: var(--spacing-xl);
+  .satellite-image-container {
+    max-width: 250px;
   }
 
-  .placeholder-icon {
-    font-size: 2rem;
+  .image-overlay {
+    padding: var(--spacing-md);
+  }
+
+  .image-text {
+    font-size: 1rem;
+  }
+
+  .image-subtext {
+    font-size: 0.75rem;
   }
 }
 </style>
